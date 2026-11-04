@@ -2,7 +2,7 @@
 
 > K Explore – Web Designing task: a responsive event management website where users explore upcoming events, view details and register.
 
-**Live demo:** [https://YOUR-SITE.vercel.app](https://YOUR-SITE.vercel.app)
+**Live demo:** [https://festora-psi.vercel.app](https://festora-psi.vercel.app)
 **Repository:** [https://github.com/vaidehi-hello/festora](https://github.com/vaidehi-hello/festora)
 
 
@@ -52,7 +52,7 @@
 Requires Node.js 18 or higher.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/festora.git
+git clone https://github.com/vaidehi-hello/festora.git
 cd festora
 npm install
 npm run dev       # start the dev server at http://localhost:5173
