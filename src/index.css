@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light theme: cream paper, navy ink */
+:root {
+  --bg: 253 240 213;        /* #FDF0D5 cream */
+  --surface: 255 249 235;
+  --ink: 0 48 73;           /* #003049 */
+  --muted: 62 94 117;
+  --line: 102 155 188;      /* #669BBC */
+  --brand: 120 0 0;         /* #780000 */
+  --brand-ink: 253 240 213;
+  --accent: 193 18 31;      /* #C1121F */
+}
+
+/* Dark theme: midnight paper, cream ink */
+.dark {
+  --bg: 0 24 38;
+  --surface: 0 42 64;
+  --ink: 253 240 213;
+  --muted: 150 185 208;
+  --line: 102 155 188;
+  --brand: 193 18 31;
+  --brand-ink: 253 240 213;
+  --accent: 102 155 188;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  h1, h2, h3 {
+    @apply font-display tracking-tight;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+    outline-style: solid;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-200 active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand text-brand-ink hover:opacity-90;
+  }
+  .btn-ghost {
+    @apply btn border border-line bg-transparent text-ink hover:bg-line/20;
+  }
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .input {
+    @apply w-full rounded-xl border border-line bg-bg px-11 py-3 text-sm text-ink placeholder:text-muted/70 transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* scroll reveal: small, quick, only once */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
+}
+
+/* soft colour washes behind every page: sky blue top-right, crimson bottom-left */
+body {
+  background-image:
+    radial-gradient(900px 520px at 100% 0%, rgb(var(--line) / 0.22), transparent 65%),
+    radial-gradient(800px 520px at 0% 100%, rgb(var(--accent) / 0.1), transparent 65%);
+}
+
+/* hero: deep navy with a crimson glow, a sky-blue glow and a fine dot grid */
+.hero-bg {
+  background:
+    radial-gradient(rgb(253 240 213 / 0.07) 1px, transparent 1px) 0 0 / 28px 28px,
+    radial-gradient(60% 70% at 88% 12%, rgb(193 18 31 / 0.42), transparent 62%),
+    radial-gradient(55% 60% at 8% 95%, rgb(102 155 188 / 0.3), transparent 62%),
+    linear-gradient(135deg, #001d2c 0%, #003049 100%);
+}
+
+/* numbers band in the hero: deep ruby gradient */
+.stats-band {
+  background:
+    radial-gradient(70% 120% at 100% 0%, rgb(139 18 48 / 0.6), transparent 70%),
+    linear-gradient(135deg, #37060e 0%, #5b0618 55%, #7a0c24 100%);
+}
+
+/* footer: navy into deep ruby into amethyst */
+.footer-bg {
+  background:
+    radial-gradient(60% 80% at 88% 100%, rgb(139 18 48 / 0.45), transparent 60%),
+    radial-gradient(50% 70% at 0% 0%, rgb(6 38 63 / 0.9), transparent 65%),
+    linear-gradient(135deg, #04121f 0%, #37060e 45%, #5b0618 75%, #260a30 100%);
+}
