@@ -5,15 +5,6 @@
 **Live demo:** [https://YOUR-SITE.vercel.app](https://YOUR-SITE.vercel.app)
 **Repository:** [https://github.com/vaidehi-hello/festora](https://github.com/vaidehi-hello/festora)
 
-## Screenshots
-
-| Home (desktop) | Events page | Event details |
-|---|---|---|
-| ![Home](docs/screenshots/home.png) | ![Events](docs/screenshots/events.png) | ![Details](docs/screenshots/details.png) |
-
-| Home (mobile) | Registration | Dark mode |
-|---|---|---|
-| ![Mobile](docs/screenshots/mobile.png) | ![Register](docs/screenshots/register.png) | ![Dark](docs/screenshots/dark.png) |
 
 ## Features
 
@@ -140,5 +131,5 @@ Event photos from [Unsplash](https://unsplash.com), icons from [Lucide](https://
 
 ## Author
 
-**[YOUR NAME]**, B.Tech CSE, KIIT Bhubaneswar
+**[VAIDEHI]**, B.Tech CSE, KIIT Bhubaneswar
 GitHub: [@vaidehi-hello](https://github.com/vaidehi-hello)
